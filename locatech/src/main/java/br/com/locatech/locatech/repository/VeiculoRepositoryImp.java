@@ -26,9 +26,9 @@ public class VeiculoRepositoryImp implements VeiculoRepository{
     }
 
     @Override
-    public List<Veiculo> findyAll(int size, int offset) {
+    public List<Veiculo> findAll(int size, int offset) {
         return this.jdbcClient.
-                sql("SELECT * FROM veiculos LIMIT : size OFFSET :offset")
+                sql("SELECT * FROM veiculos LIMIT :size OFFSET :offset")
                 .param("size",size)
                 .param("offset",offset)
                 .query(Veiculo.class)
@@ -48,7 +48,7 @@ public class VeiculoRepositoryImp implements VeiculoRepository{
 
     @Override
     public Integer update(Veiculo veiculo, Long id) {
-        return this.jdbcClient.sql("UPDATE veiculos ( SET marca = :marca,modelo = :modelo,placa = :placa,ano = :ano,cor = :cor,diaria_valor = :diaria_valor WHERE id = :id)")
+        return this.jdbcClient.sql("UPDATE veiculos SET marca = :marca,modelo = :modelo,placa = :placa,ano = :ano,cor = :cor,diaria_valor = :diaria_valor WHERE id = :id")
                 .param("id",id)
                 .param("marca",veiculo.getMarca())
                 .param("modelo",veiculo.getModelo())

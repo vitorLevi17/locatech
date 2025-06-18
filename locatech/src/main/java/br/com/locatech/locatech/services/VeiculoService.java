@@ -19,7 +19,7 @@ public class VeiculoService {
 
     public List<Veiculo> findAllVeiculos(int page, int size){
         int offset = (page-1) * size;
-        return this.veiculoRepository.findyAll(size,offset);
+        return this.veiculoRepository.findAll(size,offset);
     }
     public Optional<Veiculo> findVeiculoById(Long id){
         return this.veiculoRepository.findById(id);
@@ -27,7 +27,7 @@ public class VeiculoService {
     public void saveVeiculo(Veiculo veiculo){
         var save = this.veiculoRepository.save(veiculo);
         //Verificar se só 1 linha foi afetada e mandar msg de erro
-        Assert.state(save == 1,"Erro ao salvar veiculo" + veiculo.getModelo());
+        Assert.state(save == 1,"Erro ao salvar veiculo");
     }
 
     public void updateVeiculo(Veiculo veiculo,Long id){
