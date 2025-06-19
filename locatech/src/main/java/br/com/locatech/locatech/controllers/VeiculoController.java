@@ -49,7 +49,7 @@ public class VeiculoController {
         this.veiculoService.updateVeiculo(veiculo,id);
         return ResponseEntity.ok().build();
     }
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteVeiculo(@PathVariable("id") Long id){
         logger.info("O endpoint foi acessado para deletar 1 veiculo");
         this.veiculoService.deleteVeiculo(id);

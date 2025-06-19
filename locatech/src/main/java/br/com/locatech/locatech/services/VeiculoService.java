@@ -4,8 +4,6 @@ import br.com.locatech.locatech.entitys.Veiculo;
 import br.com.locatech.locatech.repository.VeiculoRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
