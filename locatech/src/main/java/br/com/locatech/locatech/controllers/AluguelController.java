@@ -1,5 +1,6 @@
 package br.com.locatech.locatech.controllers;
 
+import br.com.locatech.locatech.dtos.AluguelRequesstDTO;
 import br.com.locatech.locatech.entitys.Aluguel;
 
 import br.com.locatech.locatech.services.AluguelService;
@@ -34,7 +35,7 @@ public class AluguelController {
         return ResponseEntity.ok(aluguel);
     }
     @PostMapping
-    public ResponseEntity<Void> saveAluguel(@RequestBody Aluguel aluguel){
+    public ResponseEntity<Void> saveAluguel(@RequestBody AluguelRequesstDTO aluguel){
         logger.info("O endpoint foi acessado para criar 1 aluguel");
         this.aluguelService.saveAluguel(aluguel);
         return ResponseEntity.status(201).build();
