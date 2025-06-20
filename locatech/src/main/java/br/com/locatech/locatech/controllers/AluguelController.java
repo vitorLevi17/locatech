@@ -4,6 +4,7 @@ import br.com.locatech.locatech.dtos.AluguelRequesstDTO;
 import br.com.locatech.locatech.entitys.Aluguel;
 
 import br.com.locatech.locatech.services.AluguelService;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +36,7 @@ public class AluguelController {
         return ResponseEntity.ok(aluguel);
     }
     @PostMapping
-    public ResponseEntity<Void> saveAluguel(@RequestBody AluguelRequesstDTO aluguel){
+    public ResponseEntity<Void> saveAluguel(@Valid @RequestBody AluguelRequesstDTO aluguel){
         logger.info("O endpoint foi acessado para criar 1 aluguel");
         this.aluguelService.saveAluguel(aluguel);
         return ResponseEntity.status(201).build();
