@@ -12,12 +12,12 @@ import java.time.LocalDate;
 @ToString
 public class Aluguel {
     private Long id;
-    private Long pessoa;
-    private Long veiculo;
+    private Long pessoa_id;
+    private Long veiculo_id;
     private String veiculo_modelo;
-    private String pessoaCPF;
-    private String pessoaNome;
-    private LocalDate data_inicial;
+    private String pessoa_CPF;
+    private String pessoa_nome;
+    private LocalDate data_inicio;
     private LocalDate data_final;
     private BigDecimal valor_total;
 }
