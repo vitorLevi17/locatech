@@ -2,6 +2,7 @@ package br.com.locatech.locatech.controllers;
 
 import br.com.locatech.locatech.entitys.Veiculo;
 import br.com.locatech.locatech.services.VeiculoService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/veiculos")
+@Tag(name = "veiculo", description = "Controller para crud de veiculos")
 public class VeiculoController {
 
     private static final Logger logger = LoggerFactory.getLogger(VeiculoController.class);
