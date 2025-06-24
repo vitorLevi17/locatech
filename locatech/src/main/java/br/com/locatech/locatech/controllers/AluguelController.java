@@ -14,9 +14,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/alugueis")
-//PARA REALIZAR UM VERSIONAMENTO SIMPLES:
-    //DUPLICAR O CONTROLLER
-    //@RequestMapping("/v2/alugueis")
 public class AluguelController {
     private static final Logger logger = LoggerFactory.getLogger(AluguelController.class);
     private final AluguelService aluguelService;
