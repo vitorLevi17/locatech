@@ -51,7 +51,13 @@ public class AluguelService {
     private Aluguel calculaAluguel(AluguelRequesstDTO aluguelRequesstDTO){
         var veiculo = this.veiculoRepository.findById(aluguelRequesstDTO.veiculo_id()).orElseThrow(() -> new RuntimeException("Veiculo não encontrado"));
         var qntd_dias = BigDecimal.valueOf(aluguelRequesstDTO.data_final().getDayOfYear() - aluguelRequesstDTO.data_inicio().getDayOfYear());
+        validaAluguel(qntd_dias);
         var valor = veiculo.getDiaria_valor().multiply(qntd_dias);
         return new Aluguel(aluguelRequesstDTO,valor);
+    }
+    private void validaAluguel(BigDecimal dias) {
+        if (dias.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new ResourceNotFoundException("Datas inválidas, a data final não pode ser maior que a inicial");
+        }
     }
 }
