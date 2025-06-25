@@ -3,6 +3,7 @@ package br.com.locatech.locatech.controllers;
 import br.com.locatech.locatech.entitys.Veiculo;
 import br.com.locatech.locatech.services.VeiculoService;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,6 @@ public class VeiculoController {
 
     public VeiculoController(VeiculoService veiculoService){
         this.veiculoService=veiculoService;
-
     }
     @GetMapping
     public ResponseEntity<List<Veiculo>> findAllVeiculos(
@@ -40,7 +40,7 @@ public class VeiculoController {
         return ResponseEntity.ok(veiculo);
     }
     @PostMapping
-    public ResponseEntity<Void> saveVeiculo(@RequestBody Veiculo veiculo){
+    public ResponseEntity<Void> saveVeiculo(@Valid @RequestBody Veiculo veiculo){
         logger.info("O endpoint foi acessado para salvar 1 veiculo");
         this.veiculoService.saveVeiculo(veiculo);
         return ResponseEntity.status(201).build();
