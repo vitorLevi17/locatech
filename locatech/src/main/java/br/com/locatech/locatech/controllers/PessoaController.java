@@ -2,6 +2,7 @@ package br.com.locatech.locatech.controllers;
 
 import br.com.locatech.locatech.entitys.Pessoa;
 import br.com.locatech.locatech.services.PessoaService;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +36,7 @@ public class PessoaController {
         return ResponseEntity.ok(pessoa);
     }
     @PostMapping
-    public ResponseEntity<Void> savePessoa(@RequestBody Pessoa pessoa){
+    public ResponseEntity<Void> savePessoa(@Valid @RequestBody Pessoa pessoa){
         logger.info("O endpoint foi acessado para criar 1 pessoa");
         this.pessoaService.savePessoa(pessoa);
         return ResponseEntity.status(201).build();
