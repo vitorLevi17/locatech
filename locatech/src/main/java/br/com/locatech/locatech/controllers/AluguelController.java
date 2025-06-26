@@ -42,7 +42,7 @@ public class AluguelController {
         return ResponseEntity.status(201).build();
     }
     @PutMapping("/{id}")
-    public ResponseEntity<Void> updateAluguel(@PathVariable("id")Long id, @RequestBody Aluguel aluguel){
+    public ResponseEntity<Void> updateAluguel(@Valid @PathVariable("id")Long id, @RequestBody AluguelRequesstDTO aluguel){
         logger.info("O endpoint foi acessado para atualizar 1 aluguel");
         this.aluguelService.updateAluguel(aluguel,id);
         return ResponseEntity.ok().build();

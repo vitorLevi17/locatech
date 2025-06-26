@@ -36,8 +36,9 @@ public class AluguelService {
         //Verificar se só 1 linha foi afetada e mandar msg de erro
         Assert.state(save == 1,"Erro ao salvar o aluguel");
     }
-    public void updateAluguel(Aluguel aluguel,Long id){
-        var update = this.aluguelRepostory.update(aluguel,id);
+    public void updateAluguel(AluguelRequesstDTO aluguel,Long id){
+        var aluguel_entity = calculaAluguel(aluguel);
+        var update = this.aluguelRepostory.update(aluguel_entity,id);
         if (update == 0){
             throw new RuntimeException("Aluguel não encontrado");
         }

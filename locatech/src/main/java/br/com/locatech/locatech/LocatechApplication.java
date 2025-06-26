@@ -7,5 +7,5 @@ public class LocatechApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LocatechApplication.class, args);
 	}
-	//ERRO DELETE PRESENTE NO ALUGUEL / UPDATE_ALUGUEL
+	// UPDATE_ALUGUEL
 }
