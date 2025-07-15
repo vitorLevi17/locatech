@@ -15,4 +15,4 @@ O LOCATECH é uma API Rest projetada para gerenciar uma locadora, aplicando os m
 - **Backend:** Java, Spring
 - **Banco de Dados:** Postgres, Hibernate
 - **Outros:** Postman, Docker
-  https://.postman.co/workspace/My-Workspace~e8c4c6fd-5032-4341-8b29-df7b30fe45c6/collection/33275127-74014934-b6a8-4880-9546-a95ac5082cd9?action=share&creator=33275127
+- **Link Collections:** https://.postman.co/workspace/My-Workspace~e8c4c6fd-5032-4341-8b29-df7b30fe45c6/collection/33275127-74014934-b6a8-4880-9546-a95ac5082cd9?action=share&creator=33275127
