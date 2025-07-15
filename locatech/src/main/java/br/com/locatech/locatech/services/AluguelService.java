@@ -36,12 +36,12 @@ public class AluguelService {
         //Verificar se só 1 linha foi afetada e mandar msg de erro
         Assert.state(save == 1,"Erro ao salvar o aluguel");
     }
-    public void updateAluguel(AluguelRequesstDTO aluguel,Long id){
-        var aluguel_entity = calculaAluguel(aluguel);
-        var update = this.aluguelRepostory.update(aluguel_entity,id);
-        if (update == 0){
-            throw new RuntimeException("Aluguel não encontrado");
+    public Optional<Aluguel> updateAluguel(AluguelRequesstDTO aluguel,Long id){
+        if (aluguelRepostory.findById(id).isPresent()){
+            var aluguel_entity = calculaAluguel(aluguel);
+            var update = this.aluguelRepostory.update(aluguel_entity,id);
         }
+        return Optional.ofNullable(this.aluguelRepostory.findById(id).orElseThrow(() -> new ResourceNotFoundException("ALUGUEL NÃO ENCONTRADO")));
     }
     public void deleteAluguel(Long id){
         var delete = this.aluguelRepostory.delete(id);

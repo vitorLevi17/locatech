@@ -7,5 +7,4 @@ public class LocatechApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LocatechApplication.class, args);
 	}
-	// UPDATE_ALUGUEL
 }
