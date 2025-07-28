@@ -1,5 +1,4 @@
 # LOCATECH
-![Solidário.com Logo]([https://via.placeholder.com/150](https://www.canva.com/design/DAGDtVg2D7k/JBPZSjbIb8UT0Wfz9wwnUw/edit))
 
 ## Descrição
 
